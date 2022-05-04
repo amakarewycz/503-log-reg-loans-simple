@@ -10,7 +10,7 @@ myheading1='Predicting Mortgage Loan Approval'
 image1='assets/rocauc.html'
 tabtitle = 'Loan Prediction'
 sourceurl = 'https://datahack.analyticsvidhya.com/contest/practice-problem-loan-prediction-iii/'
-githublink = 'https://github.com/plotly-dash-apps/503-log-reg-loans-simple'
+githublink = 'https://github.com/amakarewycz/503-log-reg-loans-simple'
 
 varlist = ['Urban', 'SemiUrban', 'Rural']
 ########### open the json file ######
