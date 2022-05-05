@@ -95,12 +95,18 @@ app.layout = html.Div(children=[
     ])
 def prediction_function(Credit_History, LoanAmount, Loan_Amount_Term, ApplicantIncome, PropertyArea, Threshold):
     try:
-        if PropertyArea == "Urban":
-            PropertyArea = 1
-        else:
-            PropertyArea = 0
+        UrbanArea = RuralArea =  SemiUrbanArea = 0
+        
+        if PropertyArea == varlist[0]:
+            UrbanArea = 1
+        elif PropertyArea == varlist[1]:
+            SemiUrbanArea = 1
+        elif PropertyArea == varlist[2]:
+            RuralArea = 1
+
+
             
-        data = [[Credit_History, LoanAmount, Loan_Amount_Term, ApplicantIncome, PropertyArea]]
+        data = [[Credit_History, LoanAmount, Loan_Amount_Term, ApplicantIncome, UrbanArea, SemiUrbanArea, RuralArea]]
         rawprob=100*unpickled_model.predict_proba(data)[0][1]
         func = lambda y: 'Approved' if int(rawprob)>Threshold else 'Denied'
         formatted_y = func(rawprob)
